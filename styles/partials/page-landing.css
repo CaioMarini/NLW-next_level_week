@@ -1,0 +1,146 @@
+
+
+
+#page-landing{
+    background: var(--color-primary);
+}
+
+#page-landing #container{
+    color: var(--color-text-in-primary);
+}
+
+/* Pega a div que tem a o logo-container da imagem */
+.logo-container img{
+    height: 10rem;
+}
+
+
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+.logo-container h2{
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+
+
+.hero-image{
+    width: 90%;
+}
+
+.buttons-container{
+    display: flex; /*colocar os elemetos um do lado do outro*/
+    justify-content:center;/*funciona em conjunto com o display, colocando os elementos no centro*/
+    margin: 3.2rem 0;
+}
+
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem;/*arredonda as bordas*/
+
+    border-top-left-radius: 4rem;/*altera a borda superior esquerda*/
+    border-bottom-right-radius: 4rem;
+    margin-right: 1.6rem;
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;/*remove a linha embaixo do texto*/
+    /*Transições*/
+    transition: background 0.2s;/*delay da mudança do backgroud color*/
+
+    color: var(--color-button-text);
+
+}
+
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}
+
+/*Essas propriedades somete serao aplicadas quando o mouse estiver em cima do botao*/
+.buttons-container a.study:hover{
+    background: var(--color-primary-light);
+}
+
+
+.buttons-container a.give-classes{
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover{
+    background: var(--color-secondary-dark);
+}
+
+.total-connections{
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+@media (max-width:699px){
+    :root{
+        font-size: 40%/*modificar as medidas rem*/
+    }
+}
+
+
+/*Verifica se o tamnho da tela é 1100px, e se for aplica o que estiver nele*/
+@media (min-width: 1100px){
+    #page-landing #container{
+        width: 90vw;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr ;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+        gap: 87px;/*espaço*/
+    }
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-container img{
+        height: 100%;
+        height: 127px;
+    }
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .total-connections{
+        grid-area: texting;
+        justify-self: center;
+        font-size: 1.2rem;
+    }
+
+}

@@ -45,6 +45,7 @@ body{
     margin :0;
     padding: 0;
     box-sizing: border-box;
+
 } 
 /*como os elementos tem diferente força, é necessario fazer isso*/
 body, input, button, textarea{
@@ -57,11 +58,15 @@ body, input, button, textarea{
 
 
 #container{
-    width: 90vh;/*largura*/
+    width: 90vw;/*largura*/
     max-width: 700px;
-    ;
+    
 }
-
+@media (min-width: 700px){
+    :root{
+        font-size: 62.5%;/*todo 1rem vai ser relativo a 10px*/
+    }
+}
 
 
 /*
